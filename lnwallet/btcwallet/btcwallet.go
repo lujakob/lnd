@@ -1383,13 +1383,17 @@ func unminedTransactionsToDetail(
 // empty, transactions of all wallet accounts are returned.
 //
 // This is a part of the WalletController interface.
-func (b *BtcWallet) ListTransactionDetails(startHeight, endHeight int32,
+func (b *BtcWallet) ListTransactionDetails(startHeight, endHeight int32, txHashList []string,
 	accountFilter string) ([]*lnwallet.TransactionDetail, error) {
 
 	// Grab the best block the wallet knows of, we'll use this to calculate
 	// # of confirmations shortly below.
 	bestBlock := b.wallet.Manager.SyncedTo()
 	currentHeight := bestBlock.Height
+
+	// TODO: handle 'tx_hash_list' parameter here
+
+	// We'll attempt to find all transactions from start to end height.
 
 	// We'll attempt to find all transactions from start to end height.
 	start := base.NewBlockIdentifierFromHeight(startHeight)

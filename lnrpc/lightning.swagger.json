@@ -2512,6 +2512,17 @@
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "tx_hash_list",
+            "description": "A optional filter for searching specific transactions.",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           }
         ],
         "tags": [
@@ -2682,6 +2693,17 @@
             "in": "query",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "tx_hash_list",
+            "description": "A optional filter for searching specific transactions.",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
           }
         ],
         "tags": [
